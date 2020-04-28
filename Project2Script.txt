@@ -1,0 +1,27 @@
+#!/bin/bash 
+#
+# gnome-calculator
+#
+# script to start gnome-calculator 
+# Provides:
+# Required-Start: 
+# Required-Stop:
+# Should-Start:
+# Should-Stop:
+# X-Start-Before:
+# X-Stop-After:
+# Default-Start: 3 4 5 
+# Default-Stop: 0 1 6 
+# X-Interactive:
+# Short-Description: /usr/bin/gnome-calculator
+# Descripton: /usr/bin/gnome-calculator
+#if [ -f /etc/init.d/New-gnome-calculator ]; then 
+#/usr/bin/ gnome-calculator
+#fi
+#
+case "$1" in
+'start')
+echo -n "Starting Gnome Calculator..."
+/usr/bin/gnome-calculator
+;;
+esac
