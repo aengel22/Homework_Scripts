@@ -1,14 +1,15 @@
-//Intro to Programming  Program 4  Anna Engel  
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-//define function prototypes 
+//define function prototypes
+// ** I would suggest a short comment after each prototype to
+// ** explain what the function is intended for, etc.
 int subFunc (int x, int y);
 int addFunc (int x, int y);
 int multFunc (int x, int y);
-void printFunc (int x, int y);
+//** - original line - void printFunc (int x, int y);
+void printFunc(int x); // ** new line - should work
 float roundFunc (float z);
 int getValueOne (void);
 int getValueTwo (void);
@@ -17,51 +18,60 @@ float getValueThree (void);
 int main() // Boss Function
 {
     int valueOne, valueTwo; //integer values are called
-    float valueThree; // decimal "float" value is called 
+    float valueThree; // decimal "float" value is called
     printf("\n Part 1: Integer Functions \n");
-    
+
     //passes values 1 and 2 to sub function
     printf("\n Starting the Subtraction Function \n");
     valueOne = getValueOne();
     valueTwo = getValueTwo();
-    
+
     int subFuncResult = subFunc (valueOne, valueTwo);
-    
+
     printf("\n\n %d - %d = %d \n", valueOne, valueTwo, subFuncResult);
-    
+
     //passes values 1 and 2 to add function
     printf("\n Starting the Addition Function \n");
     valueOne = getValueOne();
     valueTwo = getValueTwo();
-    
-    int addFuncResult = addFunc (valueOne, valueTwo, addFuncResult);
-    
+
+    // ** - original line - int addFuncResult = addFunc (valueOne, valueTwo, addFuncResult);
+    int addFuncResult = addFunc(valueOne, valueTwo); // ** new line that should work
+    // ** Why are you passing addFuncResult to the function? Based on the prototype,
+    // ** it only is accepting TWO values
+
     printf("\n\n %d + %d = %d \n", valueOne, valueTwo, addFuncResult);
-    
+
     //passes values 1 and 2 to Multiplication Function
     printf("\n Starting the Multiplication Function \n");
     valueOne = getValueOne();
     valueTwo = getValueTwo();
-    
-    int multFuncResult = multFunc (valueOne, valueTwo, multFuncResult);
-    
+
+    // ** - original line - int multFuncResult = multFunc (valueOne, valueTwo, multFuncResult);
+    int multFuncResult = multFunc(valueOne, valueTwo); // ** new line that should work
+    // ** Why are you passing multFuncResult to the function? Based on the prototype,
+    // ** it only is accepting TWO values
+
     printf("\n\n %d * %d = %d \n", valueOne, valueTwo, multFuncResult);
-    
+
     //passes value one to print function
     printf("\n Starting the Print Function \n");
     valueOne = getValueOne();
     printFunc (valueOne);
-    
+    // ** Your prototype is incorrect - you should only be passing ONE variable
+    // ** Scroll back and fix the prototype for this function to accept
+    // ** only one variable
+
     //passes value three to the float function
     printf("\n Starting the Rounding Function \n");
     valueThree = getValueThree();
     float roundFuncResult = roundFunc (valueThree);
     printf("\n The Rounded Value of %.2f is %.2f \n", valueThree, roundFuncResult);
-    
+
     //end
-    
+
     printf("\n Complete! \n");
-    
+
 }
 
 //Get Values from user
@@ -117,3 +127,4 @@ float roundFunc (float z)
     float returnResult = round(z);
     return returnResult;
 }
+// ** One too many brackets }
