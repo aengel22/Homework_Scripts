@@ -1,0 +1,9 @@
+// Module1
+// My first program in C
+#include <studio.h>
+
+// main function
+int main( void )
+{
+    printf( "Welcome to C!\n );
+} // end main function
